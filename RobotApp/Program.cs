@@ -1,4 +1,5 @@
-﻿using System;
+﻿using static RobotApp.Services.ValidationService;
+using static System.Console;
 
 namespace RobotApp
 {
@@ -6,7 +7,10 @@ namespace RobotApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            foreach (var result in args.ValidateInstructions())
+            {
+                WriteLine(result.ToString());
+            }
         }
     }
 }
